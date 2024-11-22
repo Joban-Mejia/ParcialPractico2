@@ -2,6 +2,9 @@
   <div class="container contenedor-animes">
   <div class="row">
     <p>La cantidad total de episodios es 2 y el rating promedio es 8.03</p>
+    <div class="col-12">
+      <img src="/ParcialPractico2/src/assets/animeLogo.png" alt="" width="100px">
+    </div>
     <div *ngIf="selected">
       <app-anime-detail [animeDetail]="selectedBAnime"></app-anime-detail>
       <hr>
