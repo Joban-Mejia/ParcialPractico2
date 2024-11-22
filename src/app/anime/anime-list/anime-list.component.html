@@ -1,18 +1,18 @@
   <br>
   <div class="container contenedor-animes">
   <div class="row">
-    <p>La cantidad total de episodios es 2326 y el rating promedio es 8.03</p>
+    <p>La cantidad total de episodios es 2 y el rating promedio es 8.03</p>
     <div *ngIf="selected">
       <app-anime-detail [animeDetail]="selectedBAnime"></app-anime-detail>
       <hr>
     </div>
-    <div class="col-4" *ngFor="let anime of animes">
+    <div class="card, col-4" *ngFor="let anime of animes">
         <p>{{anime.name}}</p>
-        <img src={{anime.img}}  alt="anime image" width=50px>
+        <img src={{anime.img}}  alt="anime image" width=250px>
         <p>⭐{{anime.Rating}} <b>Categories: </b>{{anime.categorie}}</p>
         <a href="#" (click)="onSelected(anime)">More information</a>
         <hr>
-   </div>
+  </div>
 
   </div>
 </div>
