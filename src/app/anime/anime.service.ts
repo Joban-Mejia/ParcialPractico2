@@ -17,13 +17,19 @@ export class AnimeService {
     return this.http.get<Anime[]>(this.apiUrl);
   }
 
-  getAnime(id: string): Observable<Anime> {
-    return this.http.get<Anime[]>(this.apiUrl).pipe(
-      map((animes: Anime[]) => {
-        //Complete con el código necesario para recorrer los animes y retornar el anime con el id buscado
+  getAnime(id: number): Observable<Anime> {
+  return this.http.get<Anime[]>(this.apiUrl).pipe(
+    map((animes: Anime[]) => {
+    //Complete con el código necesario para recorrer los animes y retornar el anime con el id buscado
+      const anime = animes.find(anime => anime.id === id);
+      if (!anime) {
         throw new Error(`Anime con ID ${id} no encontrado`);
-      })
-    );
-  }
+      }
+      return anime;
+    })
+  );
+}
 
 }
+
+
